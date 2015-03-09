@@ -1,0 +1,35 @@
+" 自定义要安装的插件
+if !exists('g:spf13_bundle_groups')
+    "let g:spf13_bundle_groups=['general', 'writing', 'neocomplcache', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
+    let g:spf13_bundle_groups=['general', 'youcompleteme', 'programming', 'javascript', 'misc', 'html',]
+endif
+
+let g:spf13_keep_trailing_whitespace = 1
+let g:spf13_no_easyWindows = 1
+
+" 禁用默认窗口切换快捷键
+"let g:spf13_no_easyWindows = 1
+
+" 禁止自动修改目录为当前文件所在目录
+let g:spf13_no_autochdir = 1
+
+" Enable powerline symbols
+let g:airline_powerline_fonts = 1
+
+" 修改vimbackup, vimviews, vimundo, 和 vimswap 文件保存路径
+" 设定vim文件缓存路径
+let g:spf13_consolidated_directory = $HOME . '/.vimcache/'
+let vimcache = $HOME . '/.vimcache/'
+if !isdirectory(g:spf13_consolidated_directory)
+    call mkdir(g:spf13_consolidated_directory)
+endif
+
+" 创建session文件夹
+if !isdirectory(g:spf13_consolidated_directory . 'session/')
+    call mkdir(g:spf13_consolidated_directory . 'session/')
+endif
+
+let g:ex_tools_path = '~/.spf13-vim-3/tools/'
+
+" 禁用默认主题
+let g:spf13_no_big_font = 1

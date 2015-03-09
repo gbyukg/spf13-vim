@@ -188,9 +188,9 @@ and `.vimrc.bundles.fork` files in the root of their fork.  The load order for t
 
 See `.vimrc.bundles` for specifics on what options can be set to override bundle configuration. See `.vimrc.before` for specifics
 on what options can be overridden. Most vim configuration options should be set in your `.vimrc.fork` file, bundle configuration
-needs to be set in your `.vimrc.bundles.fork` file. 
+needs to be set in your `.vimrc.bundles.fork` file.
 
-You can specify the default bundles for your fork using `.vimrc.before.fork` file. Here is how to create an example `.vimrc.before.fork` file 
+You can specify the default bundles for your fork using `.vimrc.before.fork` file. Here is how to create an example `.vimrc.before.fork` file
 in a fork repo for the default bundles.
 ```bash
     echo let g:spf13_bundle_groups=[\'general\', \'programming\', \'misc\', \'youcompleteme\'] >> .vimrc.before.fork
@@ -504,9 +504,70 @@ Here's some tips if you've never used VIM before:
   convenient location.
 * Keyboard [cheat sheet](https://walking-without-crutches.heroku.com/image/images/vi-vim-cheat-sheet.png).
 
-[![Analytics](https://ga-beacon.appspot.com/UA-7131036-5/spf13-vim/readme)](https://github.com/igrigorik/ga-beacon)
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/spf13/spf13-vim/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+# 使用文档:
+## [ctrlp]
 
+  + Run `:CtrlP` or `:CtrlP [starting-directory]` to invoke CtrlP in find file mode.
+  + Run `:CtrlPBuffer` or :CtrlPMRU` to invoke CtrlP in find buffer or find MRU file mode.
+  + Run `:CtrlPMixed` to search in Files, Buffers and MRU files at the same time.
+
+#### CtrlIP窗口
+快速查找文件, buffer等信息.
+
+  + Press `<F5>` to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
+  + Press `<c-f>` and <c-b> to cycle between modes.
+  + Press `<c-d>` to switch to filename only search instead of full path.
+  + Press `<c-r>` to switch to regexp mode.
+  + Use `<c-j>`, `<c-k>` or the arrow keys to navigate the result list.
+  + Use `<c-t>` or `<c-v>`, <c-x> to open the selected entry in a new tab or in a new split.
+  + Use `<c-n>`, `<c-p>` to select the next/previous string in the prompt's history.
+  + Use `<c-y>` to create a new file and its parent directories.
+  + Use `<c-z>` to mark/unmark multiple files and <c-o> to open them.
+
+##  [tacahiroy/ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky)
+[ctrlp-funky](https://github.com/ctrlpvim/ctrlp.vim) 的扩展, 查找当前文件的方法.
+
+  + `<leader>fu`: 打开查找窗口  
+  + `<leader>fU`: 打开查找窗口, 并查找当前光标下的关键字  
+
+## [kristijanhusak/vim-multiple-cursors](https://github.com/kristijanhusak/vim-multiple-cursors)
+在 Visual 模式下, 选择指定文字, 进行多鼠标操作
+
+  + `Ctrl-n`: 查找下一个指定文本段出现的位置.
+  + `Ctrl-x`: 查找下一个指定文本段出现的位置, 并排除当前光标下所选择的文本段.
+  + `Ctrl-p`: 返回上一次查找到的位置, 并排除掉当前所选的文本段.
+  + `<Exc>`: 退出多鼠标模式
+
+## [osyo-manga/vim-over](https://github.com/osyo-manga/vim-over)
+实时显示模式的匹配结果
+
+  + `:OverCommandLine`: 打开实时预览, 此时进行文字替换.
+
+## [gcmt/wildfire.vim](https://github.com/gcmt/wildfire.vim)
+正常模式下支持回车选择文本块
+
+## [Shougo/vimshell.vim](https://github.com/Shougo/vimshell.vim)
+在VIM中打开shell
+
+  + `:VimShell [{options}...] [{path}]`: 打开shell窗口
+  + `:VimShellTab [{options}...] [{path}]` 或 `<leader>vs`: 在新tab中打开shell窗口
+
+## [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
+在 VIM 中操作 GIT.
+
+  + `:Gstatus` 或 `<leader>g`: git status
+  + `:Gdiff` 或 `<leader>gd`: git diff
+  + `:Gcommit` 或 `<leader>gc`: git commit
+  + `:Gblam` 或 `<leader>gb`:
+  + `:Glog` 或 `<leader>gl`:
+  + `:Git push` 或 `<leader>gp`:
+  + `:Gwrite` 或 `<leader>gw`:
+  + `:Gedit` 或 `<leader>ge`:
+  + `:Git add -p` 或 `<leader>gi`:
+  + `:Gbrowser`: 在github中打开该文件
+
+  [![Analytics](https://ga-beacon.appspot.com/UA-7131036-5/spf13-vim/readme)](https://github.com/igrigorik/ga-beacon)
+  [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/spf13/spf13-vim/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 [Git]:http://git-scm.com
 [Curl]:http://curl.haxx.se
