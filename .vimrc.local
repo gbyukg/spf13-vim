@@ -6,6 +6,7 @@ set scrolloff=8                 " Minimum lines to keep above and below cursor
 set sidescrolloff=15
 set sidescroll=1
 setlocal nospell
+set shortmess=a
 
 " key mapping {
     "iunmap <CR>
@@ -229,6 +230,7 @@ if count(g:spf13_bundle_groups, 'youcompleteme')
         let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/'
         let g:ycm_extra_conf_globlist = $HOME . '/.spf13-vim-3/.ycm_extra_conf.py'
         let g:ycm_confirm_extra_conf=0    "打开vim时不再询问是否加载ycm_extra_conf.py配置
+        let g:ycm_show_diagnostics_ui = 0 " 关闭该选项, 让C语法检测使用 scrooloose/syntastic
     " }
 
     " UltiSnips{
@@ -306,7 +308,9 @@ endif
     let g:unite_data_directory = g:spf13_consolidated_directory . 'unite'
     let g:unite_source_bookmark_directory = g:spf13_consolidated_directory . 'bookmark'
     let g:unite_source_history_yank_file = g:spf13_consolidated_directory . 'yankring.txt'
-    let g:unite_source_rec_async_command = 'ack -f --ignore-dir="cache"'
+    " let g:unite_source_rec_async_command = 'ack -f --ignore-dir="cache"'
+    let g:unite_source_rec_async_command =
+                \ 'ag --follow --nocolor --nogroup --hidden -g ""'
 
     "nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
     unmap <leader>ff

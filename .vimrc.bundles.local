@@ -166,18 +166,22 @@ endif
         Bundle "tpope/vim-endwise.git"
     " }
 
+    " ag 查找工具{
+        Bundle "gabesoft/vim-ags"
+    " }
+
     " exVim {
-        Bundle "Shougo/vimfiler.vim"
-        Bundle "exvim/ex-vimentry"
-        Bundle "exvim/ex-utility"
-        Bundle "exvim/ex-aftercolors"
-        Bundle "exvim/ex-project"
-        Bundle "exvim/ex-gsearch"
-        Bundle "exvim/ex-tags"
-        Bundle "exvim/ex-symbol"
-        Bundle "exvim/ex-qfix"
-        Bundle "exvim/ex-hierarchy"
+        " Bundle "Shougo/vimfiler.vim"
+        " Bundle "exvim/ex-vimentry"
+        " Bundle "exvim/ex-utility"
+        " Bundle "exvim/ex-aftercolors"
+        " Bundle "exvim/ex-project"
+        " Bundle "exvim/ex-gsearch"
+        " Bundle "exvim/ex-tags"
+        " Bundle "exvim/ex-symbol"
+        " Bundle "exvim/ex-qfix"
+        " Bundle "exvim/ex-hierarchy"
         "Bundle "exvim/ex-config"
-        Bundle "gbyukg/ex-config"
+        " Bundle "gbyukg/ex-config"
     "}
 " }
